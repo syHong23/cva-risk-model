@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction MLOps Workflow</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .workflow {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .phase {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+        .step {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 180px;
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(79, 172, 254, 0.4);
+        }
+        
+        .step.data {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            box-shadow: 0 8px 25px rgba(250, 112, 154, 0.3);
+        }
+        
+        .step.model {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            color: #2d3748;
+            box-shadow: 0 8px 25px rgba(168, 237, 234, 0.3);
+        }
+        
+        .step.api {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            color: #2d3748;
+            box-shadow: 0 8px 25px rgba(252, 182, 159, 0.3);
+        }
+        
+        .step.deploy {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            color: #2d3748;
+            box-shadow: 0 8px 25px rgba(255, 154, 158, 0.3);
+        }
+        
+        .step h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .step p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .arrow {
+            font-size: 24px;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            color: white;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 15px;
+        }
+        
+        .metric h4 {
+            margin: 0 0 5px 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .metric p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .tech {
+            background: #2d3748;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .phase-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #4a5568;
+            margin-bottom: 15px;
+            text-align: center;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .phase {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .arrow {
+                transform: rotate(90deg);
+            }
+            
+            .step {
+                min-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">🧠 Stroke Prediction MLOps Workflow</div>
+        
+        <div class="workflow">
+            <!-- Phase 1: Data Pipeline -->
+            <div class="phase-title">📊 Data Engineering & Analysis Phase</div>
+            <div class="phase">
+                <div class="step data">
+                    <h3>📁 Data Collection</h3>
+                    <p>5,110 patient records<br>11 clinical features<br>CSV processing</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step data">
+                    <h3>🔍 EDA & Analysis</h3>
+                    <p>Missing value handling<br>Feature correlation<br>Class imbalance detection</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step data">
+                    <h3>⚙️ Preprocessing</h3>
+                    <p>SMOTE oversampling<br>Feature scaling<br>One-hot encoding</p>
+                </div>
+            </div>
+            
+            <div class="arrow" style="transform: rotate(90deg); margin: 10px 0;">↓</div>
+            
+            <!-- Phase 2: Model Development -->
+            <div class="phase-title">🤖 Machine Learning Development Phase</div>
+            <div class="phase">
+                <div class="step model">
+                    <h3>🎯 Model Selection</h3>
+                    <p>XGBoost Classifier<br>Hyperparameter tuning<br>Cross-validation</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step model">
+                    <h3>📈 Training</h3>
+                    <p>83% Accuracy<br>52% Stroke Recall<br>0.92 AUC Score</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step model">
+                    <h3>✅ Validation</h3>
+                    <p>Model persistence<br>Performance metrics<br>Feature importance</p>
+                </div>
+            </div>
+            
+            <div class="arrow" style="transform: rotate(90deg); margin: 10px 0;">↓</div>
+            
+            <!-- Phase 3: API Development -->
+            <div class="phase-title">🌐 API Development & Integration Phase</div>
+            <div class="phase">
+                <div class="step api">
+                    <h3>🚀 FastAPI</h3>
+                    <p>REST endpoints<br>Input validation<br>Real-time prediction</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step api">
+                    <h3>📋 Documentation</h3>
+                    <p>Swagger UI<br>API schemas<br>Usage examples</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step api">
+                    <h3>🧪 Testing</h3>
+                    <p>Unit tests<br>Integration tests<br>Health checks</p>
+                </div>
+            </div>
+            
+            <div class="arrow" style="transform: rotate(90deg); margin: 10px 0;">↓</div>
+            
+            <!-- Phase 4: Deployment -->
+            <div class="phase-title">🚀 Deployment & Production Phase</div>
+            <div class="phase">
+                <div class="step deploy">
+                    <h3>🐳 Containerization</h3>
+                    <p>Docker images<br>Multi-stage builds<br>Security hardening</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step deploy">
+                    <h3>⚡ CI/CD Pipeline</h3>
+                    <p>GitHub Actions<br>Automated testing<br>Deployment automation</p>
+                </div>
+                <div class="arrow">→</div>
+                <div class="step deploy">
+                    <h3>📊 Monitoring</h3>
+                    <p>Health endpoints<br>Performance metrics<br>Error tracking</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Performance Metrics -->
+        <div class="metrics">
+            <div class="metric">
+                <h4>83%</h4>
+                <p>Overall Accuracy</p>
+            </div>
+            <div class="metric">
+                <h4>52%</h4>
+                <p>Stroke Detection Recall</p>
+            </div>
+            <div class="metric">
+                <h4>0.92</h4>
+                <p>AUC Score</p>
+            </div>
+            <div class="metric">
+                <h4>95%</h4>
+                <p>Cross-validation</p>
+            </div>
+        </div>
+        
+        <!-- Technology Stack -->
+        <div class="tech-stack">
+            <div class="tech">Python</div>
+            <div class="tech">XGBoost</div>
+            <div class="tech">FastAPI</div>
+            <div class="tech">Docker</div>
+            <div class="tech">scikit-learn</div>
+            <div class="tech">pandas</div>
+            <div class="tech">SMOTE</div>
+            <div class="tech">GitHub Actions</div>
+        </div>
+    </div>
+</body>
+</html>
