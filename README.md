@@ -101,7 +101,7 @@ cva-risk-model/
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/wnel2001/cva-risk-model.git
+git clone https://github.com/syHong23/cva-risk-model.git
 cd cva-risk-model
 ```
 
@@ -279,8 +279,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👨‍💻 Author
 
-**Sarah Hong (wnel2001)**
-- GitHub: [github.com/wnel2001](https://github.com/wnel2001)
+**Sarah Hong (syHong23)**
+- GitHub: [github.com/syHong23](https://github.com/syHong23)
 - Email: sarah.hong2019@gmail.com
 - Portfolio: Healthcare ML & Data Science Specialist
 - Status: Seeking opportunities in French healthcare technology sector
